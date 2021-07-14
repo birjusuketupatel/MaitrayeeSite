@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width = device-width, initial-scale = 1">
+  <title>Events | Maitrayee Music</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body>
+  <!-- constant header for all pages -->
+  <header>
+    <nav class="navbar navbar-expand-md">
+      <!-- main title and logo -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/logo.png" alt="Logo">
+        <h1 class="align-items-center">Maitrayee School of Indian Music</h1>
+      </a>
+
+      <!-- collapse button -->
+      <button onclick="updateMenuIcon()" onblur="updateMenuIcon()" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation-content" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- navigation options -->
+      <div id="navigation-content" class="justify-content-end collapse navbar-collapse float-right">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="fas fa-home"></i>&nbspHome</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="lessons.html"><i class="fas fa-pencil-alt"></i>&nbspLessons</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="events.html"><i class="fas fa-music"></i>&nbspEvents</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="faq.html"><i class="fas fa-question-circle"></i>&nbspFAQ</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- main content -->
+  <div id="main-content">
+    <div id="events">
+      <!-- event jumbotron -->
+      <div class="jumbotron jumbotron-fluid"></div>
+
+      <div class="container">
+        <div class="row details">
+          <div class="col-12 col-md-6">
+            <h2>About</h2>
+            <p>
+              I collaborate with a team of musicians to provide live music for
+              all kinds of occasions. Whether it is a wedding, festival,
+              bhajan, or baby shower, I can create a custom plan to make
+              your event special.
+            </p>
+
+            <h2>Weddings</h2>
+            <p>
+              I specialize in live music for Gujarati weddings with traditional
+              Lagna Geet throughout the ceremony. The songs create an uplifting
+              atmosphere from the moment the groom enters the hall
+              to the end of the vidaai ceremony. I also do Bollywood music
+              for mehndi and Sangeet nights. I bring my own sound
+              system and speaker set-up to ensure the best quality.
+            </p>
+
+            <h2>Details</h2>
+            <p>
+              Pricing depends on many factors, such as the location of the event,
+              number of musicians needed, and the size of the event. For a
+              free quote, please contact me.
+            </p>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <form>
+              <h2>Get A Quote Today!</h2>
+              <input type="text" id="firstName" name="firstName" placeholder="First Name" class="left-lg full half-lg" required>
+              <br class="d-block d-lg-none">
+
+              <input type="text" id="lastName" name="lastName" placeholder="Last Name" class="full half-lg" required>
+              <br>
+
+              <input type="text" id="typeOfEvent" name="typeOfEvent" placeholder="Type of Event" class="left-lg full half-lg" required>
+              <br class="d-block d-lg-none">
+
+              <input type="text" id="eventDate" name="eventDate" placeholder="Event Date" class="full half-lg">
+              <br>
+
+              <input type="text" id="email" name="email" placeholder="Email" class="left-lg full half-lg" required>
+              <br class="d-block d-lg-none">
+
+              <input type="text" id="phone" name="phone" placeholder="Phone" class="full half-lg" required>
+              <br>
+
+              <input type="text" id="location" name="location" placeholder="Location of Event" class="full half-lg" required>
+              <br>
+
+              <textarea name="message" form="usrform" class="full" placeholder="Tell me about the event in detail..."></textarea>
+              <br>
+
+              <input type="submit" value="Submit" class="submit">
+            </form>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="testimonial-background">
+      <div class="container client-testimonial">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="text-center">What My Clients Say</h2>
+          </div>
+
+          <div class="col-12">
+            <img src="images/client-testimonial-1.jpg" alt="Vipul and Roshni's wedding">
+            <div>
+              <h2 class="text-center">Vipul & Roshni</h2>
+              <p>
+                "We wanted to create an auspicious and blissful atmosphere for
+                our wedding. Maitrayeeben was very easy to work with and the
+                reservation process was without stress. However, more than
+                anything was the beautiful voice and its impact in creating the
+                perfect ambience. We truly appreciate her talent and are proud
+                she played a part in our wedding day." - Vipul
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12">
+            <img src="images/client-testimonial-2.jpg" alt="Rahul and Prina's wedding">
+            <div>
+              <h2 class="text-center">Rahul & Prina</h2>
+              <p>
+                “Maitrayeeben did an excellent job singing at my wedding. She
+                came with her own sound system and they were able to connect
+                seamlessly with the venue's sound system. Her songs correlated
+                exactly with what was going on in the ceremony. Everyone loved
+                the live music! Would definitely recommend it to anyone!” - Prina
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="panel-footer">
+
+    <div class="container">
+      <div class="row row-eq-height">
+        <div class="col-md-6 col-12">
+          <!-- map -->
+          <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5166.803439267339!2d-75.5242807110191!3d39.96577485482358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6edfd95547aab%3A0x2425d86f09b0145!2sPA-3%20%26%20PA-352%2C%20Westtown%20Township%2C%20PA%2019382!5e0!3m2!1sen!2sus!4v1625617372350!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="line d-none d-md-inline"></div>
+        <hr class="d-block d-md-none">
+
+        <div class="col-md-6 col-12">
+          <!-- contact info -->
+          <h2 class="text-center">Contact Me<br></h2>
+          <p class="text-center">Maitrayee Patel</p>
+          <p class="text-center">West Chester, PA</p>
+          <a href="mailto: maitrayeepatel@gmail.com">
+            <p class="text-center">maitrayeepatel@gmail.com</p>
+          </a>
+          <a href="tel:610-918-9677">
+            <p class="phone text-center">Phone: 610-918-9677</p>
+          </a>
+
+          <!-- social media -->
+           <div id="socials" class="d-flex justify-content-center">
+             <a href="https://www.facebook.com/maitrayee.patel" target="_blank">
+               <img src="images/facebook.png" class="img-responsive" alt="my facebook">
+             </a>
+
+             <a href="https://www.instagram.com/maitrayeepatel/" target="_blank">
+               <img src="images/instagram.png" class="img-responsive" alt="my instagram">
+             </a>
+
+             <a href="https://www.youtube.com/user/MaitrayeeSuketu" target="_blank">
+               <img src="images/youtube.png" class="img-responsive" alt="my youtube channel">
+             </a>
+           </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery plugins -->
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

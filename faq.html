@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width = device-width, initial-scale = 1">
+  <title>FAQ | Maitrayee Music</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body>
+  <!-- constant header for all pages -->
+  <header>
+    <nav class="navbar navbar-expand-md">
+      <!-- main title and logo -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/logo.png" alt="Logo">
+        <h1 class="align-items-center">Maitrayee School of Indian Music</h1>
+      </a>
+
+      <!-- collapse button -->
+      <button onclick="updateMenuIcon()" onblur="updateMenuIcon()" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation-content" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- navigation options -->
+      <div id="navigation-content" class="justify-content-end collapse navbar-collapse float-right">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="fas fa-home"></i>&nbspHome</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="lessons.html"><i class="fas fa-pencil-alt"></i>&nbspLessons</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="events.html"><i class="fas fa-music"></i>&nbspEvents</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="faq.html"><i class="fas fa-question-circle"></i>&nbspFAQ</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- main content -->
+  <div id="main-content">
+    <!-- faq box -->
+    <div id="faq" class="container">
+      <h2 class="text-center">Frequently Asked Questions</h2>
+
+      <div class="row">
+        <div class="col-12">
+          <div class="accordion" id="faq-accordion">
+            <div class="accordion-item">
+              <!-- heading contains question -->
+              <h2 class="accordion-header" id="questionOne">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answerOne" aria-expanded="false" aria-controls="answerOne">
+                  When must I pay lesson fees?
+                </button>
+              </h2>
+
+              <!-- collapsable div contains answer -->
+              <div id="answerOne" class="accordion-collapse collapse" aria-labelledby="questionOne" data-bs-parent="#faq-accordion">
+                <div class="accordion-body">
+                  You must pay each month's fees within the first week of that month.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="questionTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answerTwo" aria-expanded="false" aria-controls="answerTwo">
+                  How do I pay my bill?
+                </button>
+              </h2>
+
+              <div id="answerTwo" class="accordion-collapse collapse" aria-labelledby="questionTwo" data-bs-parent="#faq-accordion">
+                <div class="accordion-body">
+                  You can pay your bills by either check, cash, or Zelle. Checks
+                  should be made payable to Maitrayee Suketu Patel LLC. In the
+                  check/Zelle memo, please include the month of lessons you
+                  are paying for.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="questionThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answerThree" aria-expanded="false" aria-controls="answerThree">
+                  If I miss a class, do I have to pay for it?
+                </button>
+              </h2>
+
+              <div id="answerThree" class="accordion-collapse collapse" aria-labelledby="questionThree" data-bs-parent="#faq-accordion">
+                <div class="accordion-body">
+                  If I cancel the class, I will make every effort to reschedule
+                  it. If I am unable to reschedule, I will give you a partial
+                  refund of that month's fees. However, if you cancel a class,
+                  you are still responsible for paying the full month's fees,
+                  and no refund will be given. Fees are paid per month, not per
+                  class.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="questionFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answerFour" aria-expanded="false" aria-controls="answerFour">
+                  How often are classes conducted?
+                </button>
+              </h2>
+
+              <div id="answerFour" class="accordion-collapse collapse" aria-labelledby="questionFour" data-bs-parent="#faq-accordion">
+                <div class="accordion-body">
+                  I conduct 1 class per week, or 4 classes per month. Private
+                  lessons may be rescheduled if advanced notice of absence is
+                  given. Group lessons may not be rescheduled.
+                  <br>
+                  It is the student's responsibility to show up to classes on
+                  time. Refunds will not be given if a student misses class
+                  and does not reschedule.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="questionFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answerFive" aria-expanded="false" aria-controls="answerFive">
+                  What if I miss a whole month of classes?
+                </button>
+              </h2>
+
+              <div id="answerFive" class="accordion-collapse collapse" aria-labelledby="questionFive" data-bs-parent="#faq-accordion">
+                <div class="accordion-body">
+                  If you intend on missing a whole month of classes, please
+                  let me know in advance. If you do so, you will not have to
+                  pay any fees for that month.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="questionSix">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#answerSix" aria-expanded="false" aria-controls="answerSix">
+                  What is the difference between group and private lessons?
+                </button>
+              </h2>
+
+              <div id="answerSix" class="accordion-collapse collapse" aria-labelledby="questionSix" data-bs-parent="#faq-accordion">
+                <div class="accordion-body">
+                  Group lessons are only offered on Sundays from 11:00 am to
+                  12:00 pm. Group lessons are best for beginners starting out
+                  in their music journey.
+                  <br>
+                  Private lessons are customized to fit into your schedule.
+                  These are best for more experienced students who wish to
+                  develop their skills further.
+                  <br>
+                  Group lessons cost $120, while private lessons cost $160.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="panel-footer">
+
+    <div class="container">
+      <div class="row row-eq-height">
+        <div class="col-md-6 col-12">
+          <!-- map -->
+          <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5166.803439267339!2d-75.5242807110191!3d39.96577485482358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6edfd95547aab%3A0x2425d86f09b0145!2sPA-3%20%26%20PA-352%2C%20Westtown%20Township%2C%20PA%2019382!5e0!3m2!1sen!2sus!4v1625617372350!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="line d-none d-md-inline"></div>
+        <hr class="d-block d-md-none">
+
+        <div class="col-md-6 col-12">
+          <!-- contact info -->
+          <h2 class="text-center">Contact Me<br></h2>
+          <p class="text-center">Maitrayee Patel</p>
+          <p class="text-center">West Chester, PA</p>
+          <a href="mailto: maitrayeepatel@gmail.com">
+            <p class="text-center">maitrayeepatel@gmail.com</p>
+          </a>
+          <a href="tel:610-918-9677">
+            <p class="phone text-center">Phone: 610-918-9677</p>
+          </a>
+
+          <!-- social media -->
+           <div id="socials" class="d-flex justify-content-center">
+             <a href="https://www.facebook.com/maitrayee.patel" target="_blank">
+               <img src="images/facebook.png" class="img-responsive" alt="my facebook">
+             </a>
+
+             <a href="https://www.instagram.com/maitrayeepatel/" target="_blank">
+               <img src="images/instagram.png" class="img-responsive" alt="my instagram">
+             </a>
+
+             <a href="https://www.youtube.com/user/MaitrayeeSuketu" target="_blank">
+               <img src="images/youtube.png" class="img-responsive" alt="my youtube channel">
+             </a>
+           </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery plugins -->
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

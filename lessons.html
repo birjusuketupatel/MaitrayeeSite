@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width = device-width, initial-scale = 1">
+  <title>Lessons | Maitrayee Music</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body>
+  <!-- constant header for all pages -->
+  <header>
+    <nav class="navbar navbar-expand-md">
+      <!-- main title and logo -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/logo.png" alt="Logo">
+        <h1 class="align-items-center">Maitrayee School of Indian Music</h1>
+      </a>
+
+      <!-- collapse button -->
+      <button onclick="updateMenuIcon()" onblur="updateMenuIcon()" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation-content" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- navigation options -->
+      <div id="navigation-content" class="justify-content-end collapse navbar-collapse float-right">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="fas fa-home"></i>&nbspHome</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="lessons.html"><i class="fas fa-pencil-alt"></i>&nbspLessons</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="events.html"><i class="fas fa-music"></i>&nbspEvents</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="faq.html"><i class="fas fa-question-circle"></i>&nbspFAQ</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- main content -->
+  <div id="main-content">
+    <div id="lessons">
+      <!-- banner image -->
+      <div class="jumbotron jumbotron-fluid"></div>
+
+      <div id="lesson-info" class="container">
+        <div class="row">
+          <!-- class details -->
+          <div class="col-lg-6 col-md-8 col-12">
+            <h2>About My School</h2>
+            <p>
+              Since 2006, I have taught Indian classical music to students of
+              all ages and skill levels. My curriculum is based on Hindustani
+              classical singing as it is traditionally taught in India. Other
+              genres, such as religious songs, folk songs, and Bollywood music,
+              are also introduced to students.
+              <br>
+              Lessons are 1 hour long and are conducted once per week.
+            </p>
+            <h2>Group Lessons</h2>
+            <p>
+              In my group lessons, beginners are paired with peers of their
+              same skill level, and work through the curriculum together. Each
+              group contains between 5 to 10 students. Classes are conducted
+              online only.
+              <br>
+              Tuition is $120 per month.
+            </p>
+            <h2>Private Lessons</h2>
+            <p>
+              In my private lessons, a group of 1 to 3 students are given
+              personalized, one-on-one instruction. This curriculum is for
+              advanced students with a passion for music. Classes are conducted online.
+              <br>
+              Tuition is $160 per month.
+              <br>
+              <strong>Due to high demand, availability is limited.</strong>
+          </div>
+
+          <!-- application form -->
+          <div class="col-lg-6 col-md-4 col-12">
+            <form>
+              <h2>Apply Now</h2>
+              <input type="text" id="firstName" name="firstName" placeholder="First Name" class="left-lg full half-lg" required>
+              <br class="d-block d-lg-none">
+
+              <input type="text" id="lastName" name="lastName" placeholder="Last Name" class="full half-lg" required>
+              <br>
+
+              <input type="text" id="age" name="age" placeholder="Age of Student" class="left-lg full half-lg" required>
+              <br class="d-block d-lg-none">
+
+              <select id="skillLevel" name="skillLevel" class="full half-lg" required>
+                <option value="">Skill Level</option>
+                <option value="beginner">Begineer</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="experienced">Experienced</option>
+              </select>
+              <br>
+
+              <input type="text" id="email" name="email" placeholder="Email" class="left-lg full half-lg" required>
+              <br class="d-block d-lg-none">
+
+              <input type="text" id="phone" name="phone" placeholder="Phone" class="full half-lg" required>
+              <br>
+
+              <label for="lessonType">Type of Lesson</label>
+              <br>
+              <input type="radio" id="groupLesson" name="lessonType" value="group" required>
+              <label for="groupLesson" class="radio-option">Group</label>
+              <br>
+              <input type="radio" id="privateLesson" name="lessonType" value="private" required>
+              <label for="privateLesson" class="radio-option">Private</label>
+              <br>
+
+              <textarea name="message" form="usrform" class="full" placeholder="Message..."></textarea>
+              <br>
+
+              <input type="submit" value="Submit" class="submit">
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- testimonials -->
+      <div class="testimonial-background">
+      <h2 class="text-center">Testimonials</h2>
+      <div id="testimonials" class="container">
+        <div class="row">
+          <div class="col-12">
+            <!-- nested grid contains one testimonial -->
+            <div id="testimonial-container" class="container">
+              <div class="row d-flex align-items-center">
+                <div class="col-12 col-lg-3">
+                  <img class="student-portrait" src="images/anushree.jpg">
+                </div>
+
+                <div class="col-12 col-lg-7">
+                  <div class="testimonial-text">
+                    <h3 class="text-center text-lg-left student-name">Anushree</h3>
+                    <p class="student-quote">
+                      "I've been learning from Maitrayee since I was in 2nd grade.
+                      Maitrayee has helped me grow into a fan of classical music and
+                      has helped me find confidence in my singing ability that I
+                      will be able to rely on forever. The classes that seemed at
+                      first a chore as a kid became a part of my identity as I grew
+                      up. She has not only been a teacher to me, but she has been a
+                      mentor and friend in all parts of life. Maitrayee takes true
+                      interest in her art and has a passion for teaching that is
+                      reflected in the growth of her students.”
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="testimonial-container" class="container">
+              <div class="row d-flex align-items-center">
+                <div class="col-12 col-lg-3">
+                  <img class="student-portrait" src="images/rohan.jpg">
+                </div>
+
+                <div class="col-12 col-lg-7">
+                  <div class="testimonial-text">
+                    <h3 class="text-center text-lg-left student-name">Rohan</h3>
+                    <p class="student-quote">
+                      "Maitrayee auntie's singing class was one of the most
+                      beneficial experiences for me in terms of developing
+                      musically. With her guidance, I was able to learn the
+                      technicalities of Hindustani singing and as a result
+                      become more confident in myself and my voice."
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="testimonial-container" class="container">
+              <div class="row d-flex align-items-center">
+                <div class="col-12 col-lg-3">
+                  <img class="student-portrait" src="images/eera.png">
+                </div>
+
+                <div class="col-12 col-lg-7">
+                  <div class="testimonial-text">
+                    <h3 class="text-center text-lg-left student-name">Eera</h3>
+                    <p class="student-quote">
+                      "I have been learning Hindustani Classical Music from
+                      Maitrayee Aunty for about 8 years now. As I have grown up,
+                       one of the only constants in my life has been looking
+                       forward to going to my next singing class. Maitrayee
+                       Aunty is an excellent and dedicated teacher who is always
+                        trying her best to help her students improve. She is
+                        very encouraging and instills confidence in her
+                        students with a smile and a 'just try
+                        it' attitude."
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="testimonial-container" class="container">
+              <div class="row d-flex align-items-center">
+                <div class="col-12 col-lg-3">
+                  <img class="student-portrait" src="images/palash.jpg">
+                </div>
+
+                <div class="col-12 col-lg-7">
+                  <div class="testimonial-text">
+                    <h3 class="text-center text-lg-left student-name">Palash</h3>
+                    <p class="student-quote">
+                      "I have been a student of Maitrayee auntie for almost 8
+                      years now. She can build incredible relationships with
+                      people and connect to her students on a personal level.
+                      She has an incredible and unfailing strategy to teaching,
+                      and has lots of patience and belief in her students. I
+                      truly believe that no other teacher would ever be able to
+                      get me to my current point in fluency as well as she has.
+                      I continue to look forward to my classes with her every
+                      day. She is truly the best music teacher out there."
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- video of students -->
+      <div class="container">
+        <h2 class="text-center">Students in Action</h2>
+        <div class="row">
+          <div class="offset-0 col-12 offset-lg-1 col-lg-10">
+            <div class="vid-container">
+              <iframe src="https://www.youtube.com/embed/vPZ5oLXaHY0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="offset-0 col-12 offset-lg-1 col-lg-10">
+            <div class="vid-container">
+              <iframe src="https://www.youtube.com/embed/rvNS2meq0W8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="panel-footer">
+
+    <div class="container">
+      <div class="row row-eq-height">
+        <div class="col-md-6 col-12">
+          <!-- map -->
+          <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5166.803439267339!2d-75.5242807110191!3d39.96577485482358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6edfd95547aab%3A0x2425d86f09b0145!2sPA-3%20%26%20PA-352%2C%20Westtown%20Township%2C%20PA%2019382!5e0!3m2!1sen!2sus!4v1625617372350!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="line d-none d-md-inline"></div>
+        <hr class="d-block d-md-none">
+
+        <div class="col-md-6 col-12">
+          <!-- contact info -->
+          <h2 class="text-center">Contact Me<br></h2>
+          <p class="text-center">Maitrayee Patel</p>
+          <p class="text-center">West Chester, PA</p>
+          <a href="mailto: maitrayeepatel@gmail.com">
+            <p class="text-center">maitrayeepatel@gmail.com</p>
+          </a>
+          <a href="tel:610-918-9677">
+            <p class="phone text-center">Phone: 610-918-9677</p>
+          </a>
+
+          <!-- social media -->
+           <div id="socials" class="d-flex justify-content-center">
+             <a href="https://www.facebook.com/maitrayee.patel" target="_blank">
+               <img src="images/facebook.png" class="img-responsive" alt="my facebook">
+             </a>
+
+             <a href="https://www.instagram.com/maitrayeepatel/" target="_blank">
+               <img src="images/instagram.png" class="img-responsive" alt="my instagram">
+             </a>
+
+             <a href="https://www.youtube.com/user/MaitrayeeSuketu" target="_blank">
+               <img src="images/youtube.png" class="img-responsive" alt="my youtube channel">
+             </a>
+           </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery plugins -->
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

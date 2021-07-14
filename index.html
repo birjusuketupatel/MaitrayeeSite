@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width = device-width, initial-scale = 1">
+  <title>Home | Maitrayee Music</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body>
+  <!-- constant header for all pages -->
+  <header>
+    <nav class="navbar navbar-expand-md">
+      <!-- main title and logo -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="images/logo.png" alt="Logo">
+        <h1 class="align-items-center">Maitrayee School of Indian Music</h1>
+      </a>
+
+      <!-- collapse button -->
+      <button onclick="updateMenuIcon()" onblur="updateMenuIcon()" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navigation-content" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- navigation options -->
+      <div id="navigation-content" class="justify-content-end collapse navbar-collapse float-right">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html"><i class="fas fa-home"></i>&nbspHome</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="lessons.html"><i class="fas fa-pencil-alt"></i>&nbspLessons</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="events.html"><i class="fas fa-music"></i>&nbspEvents</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="faq.html"><i class="fas fa-question-circle"></i>&nbspFAQ</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- main content -->
+  <div id="main-content">
+  <div id="home">
+
+    <!-- banner image -->
+    <div class="jumbotron jumbotron-fluid">
+      <div id="main-title">
+        <h2>Maitrayee Patel</h2>
+        <h4>Teacher and Performer</h4>
+      </div>
+    </div>
+
+    <!-- about me -->
+    <h2 class="text-center">About Me</h2>
+    <div id="about-me" class="container">
+      <div class="row row-eq-height no-gutters">
+        <div class="col-lg-8 col-12">
+          <p>
+            My name is Maitrayee Patel. Since 2006, I have dedicated myself to
+            the preservation of Hindustani classical music by teaching students
+            of all ages.
+            <br>
+            <br>
+            During my lessons, I help students connect with their roots. I want
+            to inspire my students to embrace Indian culture and be proud of
+            their heritage. I hope to pass on the knowledge I accumulated from
+            my guru in India to the next generation in the here in the US.
+            <br>
+            <br>
+            I am based in West Chester, Pennsylvania, but I also offer
+            online classes, which are open to anyone regardless of location.
+            <br>
+            <br>
+            I also provide live music for weddings, raas garba, and other
+            events. I have performed across the nation, and I work
+            with other experienced artists to make sure the music for your event
+            is customized to your needs.
+          </p>
+        </div>
+
+        <div class="col-lg-4 col-12 d-flex align-items-center">
+          <a href="story.html">
+            <div id="portrait">
+              <img class="d-none d-lg-block" src="images/Portrait.jpg">
+              <img class="d-md-block d-lg-none" src="images/Portrait-short.jpg">
+                <div>
+                  <h2>My Story</h2>
+                </div>
+              </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- music -->
+    <h2 class="text-center">My Original Music</h2>
+
+    <div id="albums" class="container">
+      <div class="row">
+
+        <!-- each column contains one audio player -->
+        <div class="col-12 offset-0 offset-md-2 col-md-8 offset-lg-0 col-lg-4">
+          <div id="navi-vahurani" class="player">
+
+            <audio id="navi-vahurani-audio" class="audio-player" src="audio/navi-vahurani/01-Shlok.mp3"></audio>
+
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <div class="album-cover">
+                    <img src="images/navi-vahurani.jpg" class="img-responsive" alt="Navi Vahurani">
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="info">
+                    <div class="album-title text-center">Navi Vahurani</div>
+                    <div class="song-title text-center">Ganesh Shlok</div>
+                    <div class="song-description text-center">
+                      A short one sentence description of the song, about three
+                      lines in length, and not too verbose.
+                    </div>
+                  </div>
+
+                  <div class="control d-flex justify-content-center align-items-center">
+                    <button class="previous-track" type="button"><i class="fas fa-backward"></i></button>
+                    <button class="play-pause" type="button"><i class="fas fa-play play"></i></button>
+                    <button class="next-track" type="button"><i class="fas fa-forward"></i></button>
+                  </div>
+
+                  <div class="sliders">
+                    <input type="range" orient="vertical" min="0" max="100" value="100" class="volume-slider invisible">
+                    <div class="music-container d-inline-flex align-items-center">
+                      <span>0:00/9:99</span>
+                      <input type="range" min="0" max="1000" value="0" class="music-slider">
+                    </div>
+                    <button class="volume" type="button"><i class="fas fa-volume-up"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 offset-0 offset-md-2 col-md-8 offset-lg-0 col-lg-4">
+          <div id="madhoshi" class="player">
+
+            <audio id="madhoshi-audio" class="audio-player" src="audio/madhoshi/01-Track-1.mp3"></audio>
+
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <div class="album-cover">
+                    <img src="images/madhoshi.jpg" class="img-responsive" alt="Madhoshi">
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="info">
+                    <div class="album-title text-center">Madhoshi</div>
+                    <div class="song-title text-center">Evi Ada Ajmavu</div>
+                    <div class="song-description text-center">
+                      A short one sentence description of the song, about three
+                      lines in length, and not too verbose.
+                    </div>
+                  </div>
+
+                  <div class="control d-flex justify-content-center align-items-center">
+                    <button class="previous-track" type="button"><i class="fas fa-backward"></i></button>
+                    <button class="play-pause" type="button"><i class="fas fa-play play"></i></button>
+                    <button class="next-track" type="button"><i class="fas fa-forward"></i></button>
+                  </div>
+
+                  <div class="sliders">
+                    <input type="range" orient="vertical" min="0" max="100" value="100" class="volume-slider invisible">
+                    <div class="music-container d-inline-flex align-items-center">
+                      <span>0:00/9:99</span>
+                      <input type="range" min="0" max="1000" value="0" class="music-slider">
+                    </div>
+                    <button class="volume" type="button"><i class="fas fa-volume-up"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 offset-0 offset-md-2 col-md-8 offset-lg-0 col-lg-4">
+          <div id="balmaa" class="player">
+
+            <audio id="balmaa-audio" class="audio-player" src="audio/balmaa/01-Track-1.mp3"></audio>
+
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <div class="album-cover">
+                    <img src="images/balmaa.jpg" class="img-responsive" alt="Balmaa">
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="info">
+                    <div class="album-title text-center">Balmaa</div>
+                    <div class="song-title text-center">Saraswati Vandana</div>
+                    <div class="song-description text-center">
+                      A short one sentence description of the song, about three
+                      lines in length, and not too verbose.
+                    </div>
+                  </div>
+
+                  <div class="control d-flex justify-content-center align-items-center">
+                    <button class="previous-track" type="button"><i class="fas fa-backward"></i></button>
+                    <button class="play-pause" type="button"><i class="fas fa-play play"></i></button>
+                    <button class="next-track" type="button"><i class="fas fa-forward"></i></button>
+                  </div>
+
+                  <div class="sliders">
+                    <input type="range" orient="vertical" min="0" max="100" value="100" class="volume-slider invisible">
+                    <div class="music-container d-inline-flex align-items-center">
+                      <span>0:00/9:99</span>
+                      <input type="range" min="0" max="1000" value="0" class="music-slider">
+                    </div>
+                    <button class="volume" type="button"><i class="fas fa-volume-up"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- video player -->
+    <div id="videos" class="container">
+      <!-- video -->
+      <div class="row">
+        <div id="player" class="offset-md-3 col-md-6 offset-0 col-12 d-flex justify-content-center">
+          <img src="images/dummy.png" class="img-responsive" alt="video">
+        </div>
+      </div>
+
+      <!-- controls -->
+      <div class="row">
+        <div id="video-navigation" class="col-12 d-flex justify-content-center align-items-center">
+          <button class="previous-video" type="button"><i class="fas fa-chevron-left"></i> Prev</button>
+          <span>1/12</span>
+          <button class="next-video" type="button">Next <i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+
+      <!-- options -->
+      <div class="row">
+        <div class="option offset-md-3 col-md-2 offset-0 col-4">
+          <img src="images/dummy.png" class="img-responsive" alt="option">
+          <p>description</p>
+        </div>
+
+        <div class="option col-md-2 col-4">
+          <img src="images/dummy.png" class="img-responsive" alt="option">
+          <p>description</p>
+        </div>
+
+        <div class="option col-md-2 col-4">
+          <img src="images/dummy.png" class="img-responsive" alt="option">
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="panel-footer">
+
+    <div class="container">
+      <div class="row row-eq-height">
+        <div class="col-md-6 col-12">
+          <!-- map -->
+          <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5166.803439267339!2d-75.5242807110191!3d39.96577485482358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c6edfd95547aab%3A0x2425d86f09b0145!2sPA-3%20%26%20PA-352%2C%20Westtown%20Township%2C%20PA%2019382!5e0!3m2!1sen!2sus!4v1625617372350!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="line d-none d-md-inline"></div>
+        <hr class="d-block d-md-none">
+
+        <div class="col-md-6 col-12">
+          <!-- contact info -->
+          <h2 class="text-center">Contact Me<br></h2>
+          <p class="text-center">Maitrayee Patel</p>
+          <p class="text-center">West Chester, PA</p>
+          <a href="mailto: maitrayeepatel@gmail.com">
+            <p class="text-center">maitrayeepatel@gmail.com</p>
+          </a>
+          <a href="tel:610-918-9677">
+            <p class="phone text-center">Phone: 610-918-9677</p>
+          </a>
+
+          <!-- social media -->
+           <div id="socials" class="d-flex justify-content-center">
+             <a href="https://www.facebook.com/maitrayee.patel" target="_blank">
+               <img src="images/facebook.png" class="img-responsive" alt="my facebook">
+             </a>
+
+             <a href="https://www.instagram.com/maitrayeepatel/" target="_blank">
+               <img src="images/instagram.png" class="img-responsive" alt="my instagram">
+             </a>
+
+             <a href="https://www.youtube.com/user/MaitrayeeSuketu" target="_blank">
+               <img src="images/youtube.png" class="img-responsive" alt="my youtube channel">
+             </a>
+           </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery plugins -->
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
