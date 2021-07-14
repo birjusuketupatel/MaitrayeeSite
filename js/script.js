@@ -17,7 +17,7 @@ $(function () {
         // Refer to issue #28 in the repo.
         // Solution: force focus on the element that the click event fired on
         $(".navbar-toggler").click(function (event) {
-          $(event.target).focus();
+          $(".navbar-toggler").focus();
         });
       }
     }
@@ -95,6 +95,7 @@ for(var i = 0; i < allVolumeButtons.length; i++){
   allVolumeButtons[i].addEventListener("click", function(){
     for(var j = 0; j < window.albums.length; j++){
       if(document.getElementById(window.albums[j]["id"]).contains(this)){
+        this.focus();
         toggleVolume(window.albums[j]["id"]);
       }
     }
@@ -122,6 +123,7 @@ for(var i = 0; i < allVolumeButtons.length; i++){
   allVolumeSliders[i].addEventListener("input", function(){
     for(var j = 0; j < window.albums.length; j++){
       if(document.getElementById(window.albums[j]["id"]).contains(this)){
+        this.focus();
         updateVolume(window.albums[j]["id"]);
       }
     }
@@ -131,6 +133,7 @@ for(var i = 0; i < allVolumeButtons.length; i++){
   allVolumeSliders[i].addEventListener("change", function(){
     for(var j = 0; j < window.albums.length; j++){
       if(document.getElementById(window.albums[j]["id"]).contains(this)){
+        this.focus();
         updateVolume(window.albums[j]["id"]);
       }
     }

@@ -66,10 +66,6 @@ header li.active a{
     padding: 7px;
   }
 
-  #navigation-content{
-    padding-bottom: 0.75rem;
-  }
-
   header img{
     display: none;
   }
