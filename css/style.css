@@ -372,11 +372,6 @@ header li.active a{
   font-size: 0.8rem;
 }
 
-/* TEMPORARY */
-#videos img{
-  width: 10vw;
-}
-
 /* LESSONS PAGE */
 #lessons h2.text-center{
   margin-bottom: 2rem;
