@@ -74,7 +74,6 @@ document.addEventListener("DOMContentLoaded", function(){
   //if device is IOS, deletes all volume controls
   var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
   if(isIOS){
-   alert('ios');
     for(var i = 0; i < allVolumeButtons.length; i++){
       allVolumeButtons[i].remove();
       allVolumeSliders[i].remove();
