@@ -1,27 +1,155 @@
 /*
  * closes collapsable menu if user clicks off of it
  */
-$(function () {
-  $(".navbar-toggler").blur(function (event) {
-    var screenWidth = window.innerWidth;
+ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
 
-    if (screenWidth < 768) {
-      //checks if a link is being clicked, if so, does nothing, else collapses navbar
-      if($(".nav-item:hover").length == 0){
-        $("#navigation-content").collapse('hide');
+   // Same as document.querySelector("#navbarToggle").addEventListener("blur",...
+   $("button.navbar-toggler").blur(function (event) {
+     var screenWidth = window.innerWidth;
+     if (screenWidth < 768 && $("#navigation-content:hover").length == 0) {
+       $("#navigation-content").collapse('hide');
+     }
+   });
 
-        // In Firefox and Safari, the click event doesn't retain the focus
-        // on the clicked button. Therefore, the blur event will not fire on
-        // user clicking somewhere else in the page and the blur event handler
-        // which is set up above will not be called.
-        // Refer to issue #28 in the repo.
-        // Solution: force focus on the element that the click event fired on
-        $(".navbar-toggler").click(function (event) {
-          $(".navbar-toggler").focus();
-        });
-      }
-    }
+   // In Firefox and Safari, the click event doesn't retain the focus
+   // on the clicked button. Therefore, the blur event will not fire on
+   // user clicking somewhere else in the page and the blur event handler
+   // which is set up above will not be called.
+   // Refer to issue #28 in the repo.
+   // Solution: force focus on the element that the click event fired on
+   $("button.navbar-toggler").click(function (event) {
+     $(event.target).focus();
+   });
+ });
+
+
+document.addEventListener("DOMContentLoaded", function(){
+  //adds event listener to menu toggler
+  //updates menu button icon
+  var menuButton = document.querySelector(".navbar-toggler");
+  menuButton.addEventListener("click", function(){
+    this.focus();
+    updateMenuIcon();
   });
+  menuButton.addEventListener("blur", function(){
+    updateMenuIcon();
+  });
+
+  /*
+   * creates array of 3 music objects
+   * each object represents the state of a music player
+   */
+  window.albums = [{album: "Navi Vahurani", id: "navi-vahurani", trackNumber: 0},
+                   {album: "Madhoshi", id: "madhoshi", trackNumber: 0},
+                   {album: "Balmaa", id: "balmaa", trackNumber: 0}]
+
+  //adds event listener to all play buttons
+  //if tripped, toggles music to play or pause
+  var allPlayButtons = document.getElementsByClassName("play-pause");
+  for(var i = 0; i < allPlayButtons.length; i++){
+    allPlayButtons[i].addEventListener("click", function(){
+      //toggles this play button
+      for(var j = 0; j < window.albums.length; j++){
+        if(document.getElementById(window.albums[j]["id"]).contains(this)){
+          toggleMusic(window.albums[j]["id"]);
+        }
+      }
+
+      //pauses all other music players
+      for(var k = 0; k < window.albums.length; k++){
+        if(!document.getElementById(window.albums[k]["id"]).contains(this)){
+          pauseMusic(window.albums[k]["id"])
+        }
+      }
+    });
+  }
+
+  //adds event listeners to all volume buttons
+  //if pressed, toggles volume slider
+  //if blurred, closes slider
+  //if sliders are changed, updates volume
+  var allVolumeButtons = document.getElementsByClassName("volume");
+  var allVolumeSliders = document.getElementsByClassName("volume-slider");
+  for(var i = 0; i < allVolumeButtons.length; i++){
+    //toggles volume slider on button press
+    allVolumeButtons[i].addEventListener("click", function(){
+      for(var j = 0; j < window.albums.length; j++){
+        if(document.getElementById(window.albums[j]["id"]).contains(this)){
+          this.focus();
+          toggleVolume(window.albums[j]["id"]);
+        }
+      }
+    });
+
+    //closes volume slider on blur
+    allVolumeButtons[i].addEventListener("blur", function(){
+      for(var j = 0; j < window.albums.length; j++){
+        if(document.getElementById(window.albums[j]["id"]).contains(this)){
+          closeVolume(window.albums[j]["id"]);
+        }
+      }
+    });
+
+    //closes volume slider on blur
+    allVolumeSliders[i].addEventListener("blur", function(){
+      for(var j = 0; j < window.albums.length; j++){
+        if(document.getElementById(window.albums[j]["id"]).contains(this)){
+          closeVolume(window.albums[j]["id"]);
+        }
+      }
+    });
+
+    //updates volume on slider input
+    allVolumeSliders[i].addEventListener("input", function(){
+      for(var j = 0; j < window.albums.length; j++){
+        if(document.getElementById(window.albums[j]["id"]).contains(this)){
+          this.focus();
+          updateVolume(window.albums[j]["id"]);
+        }
+      }
+    });
+
+    //updates volume on slider change
+    allVolumeSliders[i].addEventListener("change", function(){
+      for(var j = 0; j < window.albums.length; j++){
+        if(document.getElementById(window.albums[j]["id"]).contains(this)){
+          this.focus();
+          updateVolume(window.albums[j]["id"]);
+        }
+      }
+    });
+  }
+
+  var musicSliders = document.getElementsByClassName("music-slider");
+  var allMusic = document.getElementsByClassName("audio-player");
+  for(var i = 0; i < musicSliders.length; i++){
+    allMusic[i].addEventListener("playing", function(){
+      //increments time each second
+      for(var j = 0; j < window.albums.length; j++){
+        if(document.getElementById(window.albums[j]["id"]).contains(this)){
+          setInterval(updateTimeOnPlay, 100, window.albums[j]["id"]);
+        }
+      }
+    });
+
+    musicSliders[i].addEventListener("input", function(){
+      //shows user the time associated with their input position on the slider
+      for(var j = 0; j < window.albums.length; j++){
+        if(document.getElementById(window.albums[j]["id"]).contains(this)){
+          setInterval(updateTimeOnInput, 100, window.albums[j]["id"]);
+        }
+      }
+    });
+
+    musicSliders[i].addEventListener("change", function(){
+      //updates audio when time is changed
+      for(var j = 0; j < window.albums.length; j++){
+        if(document.getElementById(window.albums[j]["id"]).contains(this)){
+          updateTimeOnChange(window.albums[j]["id"]);
+        }
+      }
+    });
+  }
 });
 
 /*
@@ -53,122 +181,6 @@ function updateMenuIcon(){
   }
 
   setTimeout(updater, 10);
-}
-
-/*
- * on startup, creates array of 3 music objects
- * each object represents the state of a music player
- */
-window.albums = [{album: "Navi Vahurani", id: "navi-vahurani", trackNumber: 0},
-                 {album: "Madhoshi", id: "madhoshi", trackNumber: 0},
-                 {album: "Balmaa", id: "balmaa", trackNumber: 0}]
-
-//adds event listener to all play buttons
-//if tripped, toggles music to play or pause
-var allPlayButtons = document.getElementsByClassName("play-pause");
-for(var i = 0; i < allPlayButtons.length; i++){
-  allPlayButtons[i].addEventListener("click", function(){
-    //toggles this play button
-    for(var j = 0; j < window.albums.length; j++){
-      if(document.getElementById(window.albums[j]["id"]).contains(this)){
-        toggleMusic(window.albums[j]["id"]);
-      }
-    }
-
-    //pauses all other music players
-    for(var k = 0; k < window.albums.length; k++){
-      if(!document.getElementById(window.albums[k]["id"]).contains(this)){
-        pauseMusic(window.albums[k]["id"])
-      }
-    }
-  });
-}
-
-//adds event listeners to all volume buttons
-//if pressed, toggles volume slider
-//if blurred, closes slider
-//if sliders are changed, updates volume
-var allVolumeButtons = document.getElementsByClassName("volume");
-var allVolumeSliders = document.getElementsByClassName("volume-slider");
-for(var i = 0; i < allVolumeButtons.length; i++){
-  //toggles volume slider on button press
-  allVolumeButtons[i].addEventListener("click", function(){
-    for(var j = 0; j < window.albums.length; j++){
-      if(document.getElementById(window.albums[j]["id"]).contains(this)){
-        this.focus();
-        toggleVolume(window.albums[j]["id"]);
-      }
-    }
-  });
-
-  //closes volume slider on blur
-  allVolumeButtons[i].addEventListener("blur", function(){
-    for(var j = 0; j < window.albums.length; j++){
-      if(document.getElementById(window.albums[j]["id"]).contains(this)){
-        closeVolume(window.albums[j]["id"]);
-      }
-    }
-  });
-
-  //closes volume slider on blur
-  allVolumeSliders[i].addEventListener("blur", function(){
-    for(var j = 0; j < window.albums.length; j++){
-      if(document.getElementById(window.albums[j]["id"]).contains(this)){
-        closeVolume(window.albums[j]["id"]);
-      }
-    }
-  });
-
-  //updates volume on slider input
-  allVolumeSliders[i].addEventListener("input", function(){
-    for(var j = 0; j < window.albums.length; j++){
-      if(document.getElementById(window.albums[j]["id"]).contains(this)){
-        this.focus();
-        updateVolume(window.albums[j]["id"]);
-      }
-    }
-  });
-
-  //updates volume on slider change
-  allVolumeSliders[i].addEventListener("change", function(){
-    for(var j = 0; j < window.albums.length; j++){
-      if(document.getElementById(window.albums[j]["id"]).contains(this)){
-        this.focus();
-        updateVolume(window.albums[j]["id"]);
-      }
-    }
-  });
-}
-
-var musicSliders = document.getElementsByClassName("music-slider");
-var allMusic = document.getElementsByClassName("audio-player");
-for(var i = 0; i < musicSliders.length; i++){
-  allMusic[i].addEventListener("playing", function(){
-    //increments time each second
-    for(var j = 0; j < window.albums.length; j++){
-      if(document.getElementById(window.albums[j]["id"]).contains(this)){
-        setInterval(updateTimeOnPlay, 100, window.albums[j]["id"]);
-      }
-    }
-  });
-
-  musicSliders[i].addEventListener("input", function(){
-    //shows user the time associated with their input position on the slider
-    for(var j = 0; j < window.albums.length; j++){
-      if(document.getElementById(window.albums[j]["id"]).contains(this)){
-        setInterval(updateTimeOnInput, 100, window.albums[j]["id"]);
-      }
-    }
-  });
-
-  musicSliders[i].addEventListener("change", function(){
-    //updates audio when time is changed
-    for(var j = 0; j < window.albums.length; j++){
-      if(document.getElementById(window.albums[j]["id"]).contains(this)){
-        updateTimeOnChange(window.albums[j]["id"]);
-      }
-    }
-  });
 }
 
 /*
@@ -251,7 +263,6 @@ function updateTimeOnInput(playerId){
    }
 
    var timestamp = timeMins + ":" + timeSecs + "/" + durationMins + ":" + durationSecs;
-   console.log(timestamp);
    player.querySelector(".music-container span").innerText = timestamp;
 }
 
