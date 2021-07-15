@@ -22,7 +22,6 @@
    });
  });
 
-
 document.addEventListener("DOMContentLoaded", function(){
   //adds event listener to menu toggler
   //updates menu button icon
@@ -70,6 +69,17 @@ document.addEventListener("DOMContentLoaded", function(){
   //if sliders are changed, updates volume
   var allVolumeButtons = document.getElementsByClassName("volume");
   var allVolumeSliders = document.getElementsByClassName("volume-slider");
+
+
+  //if device is IOS, deletes all volume controls
+  var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  if(isIOS){
+    for(var i = 0; i < allVolumeButtons.length; i++){
+      allVolumeButtons[i].remove();
+      allVolumeSliders[i].remove();
+    }
+  }
+
   for(var i = 0; i < allVolumeButtons.length; i++){
     //toggles volume slider on button press
     allVolumeButtons[i].addEventListener("click", function(){
