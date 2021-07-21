@@ -19,191 +19,193 @@
  * on page load, adds event listeners to all items with interactive behavior
  */
 document.addEventListener("DOMContentLoaded", function(){
-  /*
-   * creates array of 3 music objects
-   * each object represents the state of a music player
-   */
-  window.albums = [{album: "Navi Vahurani",
-                   id: "navi-vahurani",
-                   trackNumber: 0,
-                   fileNames: ["01-Shlok.mp3",
-                               "02-Muratiyo-Shodhta.mp3",
-                               "03-Chali-Varrajani.mp3",
-                               "04-Mumbai-Shaherno.mp3",
-                               "05-Ek-Rangilo-Mor.mp3",
-                               "06-Kan-Chheta-Chheta.mp3",
-                               "07-Navi-Vahurani.mp3",
-                               "08-Dudh-Makhan-Sama.mp3",
-                               "09-Varraja-Aaje.mp3",
-                               "10-Tame-Paino-Pan.mp3",
-                               "11-Vhali-Dikri.mp3"],
-                    trackNames: ["Shlok",
-                                 "Muratiyo Shodhta",
-                                 "Chali Varrajani",
-                                 "Mubai Shaherno",
-                                 "Ek Rangilo Mor",
-                                 "Kan Chheta Chheta",
-                                 "Navi Vahurani",
-                                 "Dudh Makhan Sama",
-                                 "Varraja Aaje",
-                                 "Tame Paino Pan",
-                                 "Vhali Dikri"]},
+  if(document.URL.includes("index.html")){
+    /*
+     * creates array of 3 music objects
+     * each object represents the state of a music player
+     */
+    window.albums = [{album: "Navi Vahurani",
+                     id: "navi-vahurani",
+                     trackNumber: 0,
+                     fileNames: ["01-Shlok.mp3",
+                                 "02-Muratiyo-Shodhta.mp3",
+                                 "03-Chali-Varrajani.mp3",
+                                 "04-Mumbai-Shaherno.mp3",
+                                 "05-Ek-Rangilo-Mor.mp3",
+                                 "06-Kan-Chheta-Chheta.mp3",
+                                 "07-Navi-Vahurani.mp3",
+                                 "08-Dudh-Makhan-Sama.mp3",
+                                 "09-Varraja-Aaje.mp3",
+                                 "10-Tame-Paino-Pan.mp3",
+                                 "11-Vhali-Dikri.mp3"],
+                      trackNames: ["Shlok",
+                                   "Muratiyo Shodhta",
+                                   "Chali Varrajani",
+                                   "Mubai Shaherno",
+                                   "Ek Rangilo Mor",
+                                   "Kan Chheta Chheta",
+                                   "Navi Vahurani",
+                                   "Dudh Makhan Sama",
+                                   "Varraja Aaje",
+                                   "Tame Paino Pan",
+                                   "Vhali Dikri"]},
 
-                   {album: "Madhoshi",
-                   id: "madhoshi",
-                   trackNumber: 0,
-                   fileNames: ["01-Track-1.mp3",
-                               "02-Track-2.mp3",
-                               "03-Track-3.mp3",
-                               "04-Track-4.mp3",
-                               "05-Track-5.mp3",
-                               "06-Track-6.mp3",
-                               "07-Track-7.mp3",
-                               "08-Track-8.mp3",
-                               "09-Track-9.mp3",
-                               "10-Track-10.mp3",
-                               "11-Track-11.mp3",
-                               "12-Track-12.mp3"],
-                    trackNames: ["Evi Ada Ajmavu",
-                                "Tamne Hu Game Chhu",
-                                "Andharya Ava",
-                                "Mane Aa Te Shun",
-                                "Madhoshibharyu",
-                                "Chhupavi Na Shaki",
-                                "Hu Mara Mahelni",
-                                "Ek Maru Ne",
-                                "Tame Amane Dilthi",
-                                "Mara Piya Pardesh",
-                                "Tamne Yad Kari",
-                                "Samay Ghadik"]},
+                     {album: "Madhoshi",
+                     id: "madhoshi",
+                     trackNumber: 0,
+                     fileNames: ["01-Track-1.mp3",
+                                 "02-Track-2.mp3",
+                                 "03-Track-3.mp3",
+                                 "04-Track-4.mp3",
+                                 "05-Track-5.mp3",
+                                 "06-Track-6.mp3",
+                                 "07-Track-7.mp3",
+                                 "08-Track-8.mp3",
+                                 "09-Track-9.mp3",
+                                 "10-Track-10.mp3",
+                                 "11-Track-11.mp3",
+                                 "12-Track-12.mp3"],
+                      trackNames: ["Evi Ada Ajmavu",
+                                  "Tamne Hu Game Chhu",
+                                  "Andharya Ava",
+                                  "Mane Aa Te Shun",
+                                  "Madhoshibharyu",
+                                  "Chhupavi Na Shaki",
+                                  "Hu Mara Mahelni",
+                                  "Ek Maru Ne",
+                                  "Tame Amane Dilthi",
+                                  "Mara Piya Pardesh",
+                                  "Tamne Yad Kari",
+                                  "Samay Ghadik"]},
 
-                   {album: "Balmaa",
-                   id: "balmaa",
-                   trackNumber: 0,
-                   fileNames: ["01-Track-1.mp3",
-                               "02-Track-2.mp3",
-                               "03-Track-3.mp3",
-                               "04-Track-4.mp3",
-                               "05-Track-5.mp3",
-                               "06-Track-6.mp3",
-                               "07-Track-7.mp3",
-                               "08-Track-8.mp3"],
-                   trackNames: ["Saraswati Vandana",
-                                "Raag Gavati",
-                                "Raag Puriya Dhanashree",
-                                "Raag Madhuvanti",
-                                "Piya Mohe Chhod Gayo",
-                                "Khabariyaa Bheju",
-                                "Nadiya Kinaare Ek Bangalaa",
-                                "Raag Darbari"]}];
+                     {album: "Balmaa",
+                     id: "balmaa",
+                     trackNumber: 0,
+                     fileNames: ["01-Track-1.mp3",
+                                 "02-Track-2.mp3",
+                                 "03-Track-3.mp3",
+                                 "04-Track-4.mp3",
+                                 "05-Track-5.mp3",
+                                 "06-Track-6.mp3",
+                                 "07-Track-7.mp3",
+                                 "08-Track-8.mp3"],
+                     trackNames: ["Saraswati Vandana",
+                                  "Raag Gavati",
+                                  "Raag Puriya Dhanashree",
+                                  "Raag Madhuvanti",
+                                  "Piya Mohe Chhod Gayo",
+                                  "Khabariyaa Bheju",
+                                  "Nadiya Kinaare Ek Bangalaa",
+                                  "Raag Darbari"]}];
 
-  //on page load, adds first track to each audio player
-  for(var i = 0; i < window.albums.length; i++){
-    //updates audio with first track
-    var currAlbum = window.albums[i]["id"];
-    var audioHTML = "<audio class='audio-player' src='audio/" + currAlbum + "/" + window.albums[i]["fileNames"][0] + "'></audio>";
-    var audioContainer = document.querySelector("#" + currAlbum + " .audio-container");
-    audioContainer.innerHTML = audioHTML;
+    //on page load, adds first track to each audio player
+    for(var i = 0; i < window.albums.length; i++){
+      //updates audio with first track
+      var currAlbum = window.albums[i]["id"];
+      var audioHTML = "<audio class='audio-player' src='audio/" + currAlbum + "/" + window.albums[i]["fileNames"][0] + "'></audio>";
+      var audioContainer = document.querySelector("#" + currAlbum + " .audio-container");
+      audioContainer.innerHTML = audioHTML;
 
-    //updates track title
-    var trackName = window.albums[i]["trackNames"][0];
-    var trackTitle = document.querySelector("#" + currAlbum + " .song-title");
-    trackTitle.innerText = trackName;
+      //updates track title
+      var trackName = window.albums[i]["trackNames"][0];
+      var trackTitle = document.querySelector("#" + currAlbum + " .song-title");
+      trackTitle.innerText = trackName;
 
-    //updates timestamp
-    var audio = document.querySelector("#" + currAlbum + " audio");
-    audio.addEventListener("loadedmetadata", function(){
-      for(var j = 0; j < window.albums.length; j++){
-        if(document.getElementById(window.albums[j]["id"]).contains(this)){
-          updateTimeOnPlay(window.albums[j]["id"]);
-        }
-      }
-    });
-  }
-
-  //adds event listener to next track
-  //changes to next track on click
-  var nextTrackButtons = document.getElementsByClassName("next-track");
-  for(var i = 0; i < window.albums.length; i++){
-    nextTrackButtons[i].addEventListener("click", function(){
-      for(var j = 0; j < window.albums.length; j++){
-        if(document.getElementById(window.albums[j]["id"]).contains(this)){
-          //updates track number
-          var currAlbum = window.albums[j];
-          var track = currAlbum["trackNumber"];
-          track = (track + 1) % currAlbum["fileNames"].length;
-          currAlbum["trackNumber"] = track;
-
-          //updates audio
-          var audioHTML = "<audio class='audio-player' src='audio/" + currAlbum["id"] + "/" + currAlbum["fileNames"][track] + "'></audio>";
-          var audioContainer = document.querySelector("#" + currAlbum["id"] + " .audio-container");
-          audioContainer.innerHTML = audioHTML;
-
-          //updates track title
-          var trackName = currAlbum["trackNames"][track];
-          var trackTitle = document.querySelector("#" + currAlbum["id"] + " .song-title");
-          trackTitle.innerText = trackName;
-
-          //updates timestamp
-          var audio = document.querySelector("#" + currAlbum["id"] + " audio");
-          audio.addEventListener("loadedmetadata", function(){
-            for(var j = 0; j < window.albums.length; j++){
-              if(document.getElementById(window.albums[j]["id"]).contains(this)){
-                updateTimeOnPlay(window.albums[j]["id"]);
-              }
-            }
-          });
-
-          //turns pause to play button
-          pauseMusic(currAlbum["id"]);
-        }
-      }
-    });
-  }
-
-  //adds event listener to previous track
-  //changes to previous track on click
-  var prevTrackButtons = document.getElementsByClassName("previous-track");
-  for(var i = 0; i < window.albums.length; i++){
-    prevTrackButtons[i].addEventListener("click", function(){
-      for(var j = 0; j < window.albums.length; j++){
-        if(document.getElementById(window.albums[j]["id"]).contains(this)){
-          //updates track number
-          var currAlbum = window.albums[j];
-          var track = currAlbum["trackNumber"];
-          if(track == 0){
-            track = currAlbum["trackNames"].length - 1;
+      //updates timestamp
+      var audio = document.querySelector("#" + currAlbum + " audio");
+      audio.addEventListener("loadedmetadata", function(){
+        for(var j = 0; j < window.albums.length; j++){
+          if(document.getElementById(window.albums[j]["id"]).contains(this)){
+            updateTimeOnPlay(window.albums[j]["id"]);
           }
-          else{
-            track--;
-          }
-          currAlbum["trackNumber"] = track;
-
-          //updates audio
-          var audioHTML = "<audio class='audio-player' src='audio/" + currAlbum["id"] + "/" + currAlbum["fileNames"][track] + "'></audio>";
-          var audioContainer = document.querySelector("#" + currAlbum["id"] + " .audio-container");
-          audioContainer.innerHTML = audioHTML;
-
-          //updates track title
-          var trackName = currAlbum["trackNames"][track];
-          var trackTitle = document.querySelector("#" + currAlbum["id"] + " .song-title");
-          trackTitle.innerText = trackName;
-
-          //updates timestamp
-          var audio = document.querySelector("#" + currAlbum["id"] + " audio");
-          audio.addEventListener("loadedmetadata", function(){
-            for(var j = 0; j < window.albums.length; j++){
-              if(document.getElementById(window.albums[j]["id"]).contains(this)){
-                updateTimeOnPlay(window.albums[j]["id"]);
-              }
-            }
-          });
-
-          //turns pause to play button
-          pauseMusic(currAlbum["id"]);
         }
-      }
-    });
+      });
+    }
+
+    //adds event listener to next track
+    //changes to next track on click
+    var nextTrackButtons = document.getElementsByClassName("next-track");
+    for(var i = 0; i < window.albums.length; i++){
+      nextTrackButtons[i].addEventListener("click", function(){
+        for(var j = 0; j < window.albums.length; j++){
+          if(document.getElementById(window.albums[j]["id"]).contains(this)){
+            //updates track number
+            var currAlbum = window.albums[j];
+            var track = currAlbum["trackNumber"];
+            track = (track + 1) % currAlbum["fileNames"].length;
+            currAlbum["trackNumber"] = track;
+
+            //updates audio
+            var audioHTML = "<audio class='audio-player' src='audio/" + currAlbum["id"] + "/" + currAlbum["fileNames"][track] + "'></audio>";
+            var audioContainer = document.querySelector("#" + currAlbum["id"] + " .audio-container");
+            audioContainer.innerHTML = audioHTML;
+
+            //updates track title
+            var trackName = currAlbum["trackNames"][track];
+            var trackTitle = document.querySelector("#" + currAlbum["id"] + " .song-title");
+            trackTitle.innerText = trackName;
+
+            //updates timestamp
+            var audio = document.querySelector("#" + currAlbum["id"] + " audio");
+            audio.addEventListener("loadedmetadata", function(){
+              for(var j = 0; j < window.albums.length; j++){
+                if(document.getElementById(window.albums[j]["id"]).contains(this)){
+                  updateTimeOnPlay(window.albums[j]["id"]);
+                }
+              }
+            });
+
+            //turns pause to play button
+            pauseMusic(currAlbum["id"]);
+          }
+        }
+      });
+    }
+
+    //adds event listener to previous track
+    //changes to previous track on click
+    var prevTrackButtons = document.getElementsByClassName("previous-track");
+    for(var i = 0; i < window.albums.length; i++){
+      prevTrackButtons[i].addEventListener("click", function(){
+        for(var j = 0; j < window.albums.length; j++){
+          if(document.getElementById(window.albums[j]["id"]).contains(this)){
+            //updates track number
+            var currAlbum = window.albums[j];
+            var track = currAlbum["trackNumber"];
+            if(track == 0){
+              track = currAlbum["trackNames"].length - 1;
+            }
+            else{
+              track--;
+            }
+            currAlbum["trackNumber"] = track;
+
+            //updates audio
+            var audioHTML = "<audio class='audio-player' src='audio/" + currAlbum["id"] + "/" + currAlbum["fileNames"][track] + "'></audio>";
+            var audioContainer = document.querySelector("#" + currAlbum["id"] + " .audio-container");
+            audioContainer.innerHTML = audioHTML;
+
+            //updates track title
+            var trackName = currAlbum["trackNames"][track];
+            var trackTitle = document.querySelector("#" + currAlbum["id"] + " .song-title");
+            trackTitle.innerText = trackName;
+
+            //updates timestamp
+            var audio = document.querySelector("#" + currAlbum["id"] + " audio");
+            audio.addEventListener("loadedmetadata", function(){
+              for(var j = 0; j < window.albums.length; j++){
+                if(document.getElementById(window.albums[j]["id"]).contains(this)){
+                  updateTimeOnPlay(window.albums[j]["id"]);
+                }
+              }
+            });
+
+            //turns pause to play button
+            pauseMusic(currAlbum["id"]);
+          }
+        }
+      });
+    }
   }
 
   //adds event listener to menu toggler
