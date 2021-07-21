@@ -19,7 +19,7 @@
  * on page load, adds event listeners to all items with interactive behavior
  */
 document.addEventListener("DOMContentLoaded", function(){
-  if(document.URL.includes("index.html")){
+  if(document.querySelector("#home") != null){
     /*
      * creates array of 3 music objects
      * each object represents the state of a music player
